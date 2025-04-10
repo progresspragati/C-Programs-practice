@@ -42,12 +42,30 @@ void main(){
 	int n;
 	int n1;
 	int n2;
-	printf("enter the number =");
-	scanf("%d", &n);
-	sumOfNumbers(n);
-	printf("enter the value of n1 and n2 = ");
-	scanf("%d %d", &n1, &n2);
-	sumOfSquare(n1, n2);
-	sum(n);
-	findNextMultiple(n);
+	printf("enter 1 to get sum of numbers\nenter 2 to evaluate sum  of square between 2 numbers\nenter 3 to get sum of numbers, which is not divisible by 2 or 3\nenter 4 to get next smallest multiple of a number, which divided by both 3 and 7\nenter -1 to exit\n\n");
+	scanf("%d", &x);
+	for(;x!=-1){
+		if(x == 1){
+			printf("enter the number =");
+			scanf("%d", &n);
+			sumOfNumbers(n);
+		}
+		else if(x == 2){
+			printf("enter the value of n1 and n2 = ");
+			scanf("%d %d", &n1, &n2);
+			sumOfSquare(n1, n2);
+		}
+		else if(x == 3){
+			printf("enter the number =");
+			scanf("%d", &n);
+			sum(n);
+		}
+		else if(x == 4){
+			printf("enter the number =");
+			scanf("%d", &n);
+			findNextMultiple(n);
+		}
+		printf("enter 1 to get sum of numbers\nenter 2 to evaluate sum  of square between 2 numbers\nenter 3 to get sum of numbers, which is not divisible by 2 or 3\nenter 4 to get next smallest multiple of a number, which divided by both 3 and 7\nenter -1 to exit\n\n");
+		scanf("%d", &x);
+	}
 }
