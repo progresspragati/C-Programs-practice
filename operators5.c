@@ -14,7 +14,7 @@ void computePrime(int n){
 			prime = prime + 1;
 		}
 	}
-	printf("nth prime of %d = %d\n\n", n, i-1);
+	printf("%dth prime = %d\n\n", n, i-1);
 }
 void superDivide(int n){
 	int x = n;
@@ -98,11 +98,36 @@ void reverse(int n){
 	
 void main(){
 	int n;
-	printf("enter the number = ");
-	scanf("%d", &n);
-	computePrime(n);
-	superDivide(n);
-	allFactorsPrime(n);
-	reverse(n);
-	count(n);
+	int x;
+	printf("enter 1 to compute prime\nenter 2 to know whether the number is superdivide\nenter 3 to know all factors of the number is prime\nenter 4 to know how many numbers are divided and contain 3 as a digit between 1 and number\nenter 5 to get reverse of the number\nenter -1 to exit\n");
+	printf("enter the option = ");
+	scanf("%d", &x);
+	for( ; x != -1; ){
+		if(x == 1){
+		  	printf("enter the number = ");
+			scanf("%d", &n);
+			computePrime(n);
+		}
+		if(x == 2){
+		  	printf("enter the number = ");
+			scanf("%d", &n);
+			superDivide(n);
+		}
+		if(x == 3){
+		  	printf("enter the number = ");
+			scanf("%d", &n);
+			allFactorsPrime(n);
+		}
+		if(x == 4){
+		  	printf("enter the number = ");
+			scanf("%d", &n);
+			count(n);
+		}
+		if(x == 5){
+		  	printf("enter the number = ");
+			scanf("%d", &n);
+			reverse(n);
+		}
+		printf("enter 1 to compute prime\nenter 2 to know whether the number is superdivide\nenter 3 to know all factors of the number is prime\nenter 4 to know how many numbers are divided and contain 3 as a digit between 1 and number\nenter 5 to get reverse of the number\nenter -1 to exit\n");
+	}
 }
