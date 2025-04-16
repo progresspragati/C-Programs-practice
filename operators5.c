@@ -100,9 +100,9 @@ void main(){
 	int n;
 	printf("enter the number = ");
 	scanf("%d", &n);
-	//computePrime(n);
-	//superDivide(n);
-	//allFactorsPrime(n);
+	computePrime(n);
+	superDivide(n);
+	allFactorsPrime(n);
 	reverse(n);
-	//count(n);
+	count(n);
 }
