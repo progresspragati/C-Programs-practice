@@ -99,10 +99,10 @@ void reverse(int n){
 void main(){
 	int n;
 	int x;
-	printf("enter 1 to compute prime\nenter 2 to know whether the number is superdivide\nenter 3 to know all factors of the number is prime\nenter 4 to know how many numbers are divided and contain 3 as a digit between 1 and number\nenter 5 to get reverse of the number\nenter -1 to exit\n");
+	printf("enter 1 to compute prime\nenter 2 to know whether the number is superdivide\nenter 3 to know all factors of the number is prime\nenter 4 to know how many numbers are divided and contain 3 as a digit between 1 and number\nenter 5 to get reverse of the number\nenter -1 to exit\n\n");
 	printf("enter the option = ");
 	scanf("%d", &x);
-	for( ; x != -1; ){
+	for(;x!=-1;){
 		if(x == 1){
 		  	printf("enter the number = ");
 			scanf("%d", &n);
@@ -128,6 +128,10 @@ void main(){
 			scanf("%d", &n);
 			reverse(n);
 		}
-		printf("enter 1 to compute prime\nenter 2 to know whether the number is superdivide\nenter 3 to know all factors of the number is prime\nenter 4 to know how many numbers are divided and contain 3 as a digit between 1 and number\nenter 5 to get reverse of the number\nenter -1 to exit\n");
+		printf("enter 1 to compute prime\nenter 2 to know whether the number is superdivide\nenter 3 to know all factors of the number is prime\nenter 4 to know how many numbers are divided and contain 3 as a digit between 1 and number\nenter 5 to get reverse of the number\nenter -1 to exit\n\n");
+		printf("enter the option = ");
+		scanf("%d", &x);
+
 	}
+
 }
