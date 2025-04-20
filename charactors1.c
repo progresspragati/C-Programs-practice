@@ -67,10 +67,10 @@ void main(){
 	//scanf("%c", &ch);
 	//changeCase(ch);
 	//isDigit(ch);
-	printf("give 3 charactors = ");
-	scanf("%c %c %c", &x, &y, &z);
-	middle(x, y, z);
-	//printf("given two numbers and a operator =");
-	//scanf("%d %d %c", &a, &b, &c);
-	//compute(a, b, 'c');
+	//printf("give 3 charactors = ");
+	//scanf("%c %c %c", &x, &y, &z);
+	//middle(x, y, z);
+	printf("given two numbers and a operator =");
+	scanf("%d %d %c", &a, &b, &c);
+	compute(a, b, c);
 }
