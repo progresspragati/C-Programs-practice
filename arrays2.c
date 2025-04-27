@@ -16,12 +16,17 @@ void mergerOfTwoArrays(int a[], int b[], int x, int y){
 void create(int n){
 	int a[n*(n+1)/2];
 	int k = 0;
-	for(int i = 0; i < n; i++){
-		for(int j = 0; j <= i; j++){
-			a[k] = j+1;
-			printf("%d ",a[k]);
-			k = k+1;
+	if(n > 0){
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j <= i; j++){
+				a[k] = j+1;
+				printf("%d ",a[k]);
+				k = k+1;
+			}
 		}
+	}
+	else{
+		printf("invalild input");
 	}
 }
 
@@ -127,15 +132,15 @@ void mergeAndSortInDescendingOrder(int arr1[], int arr2[], int x, int y){
 }
 
 void main(){
-	int arr1[5] = {-5, 0, 18, 12, 14};
+	int arr1[5] = {-5, 0, 18, 12, 1};
 	int arr2[3] = {0, -1, -2};
 	int arr3[1] = {0};
 	int n;
-	//printf("enter the number = ");
-	//scanf("%d", &n);
+	printf("enter the number = ");
+	scanf("%d", &n);
 	//mergerOfTwoArrays(arr1, arr2, 5, 3);
-	//create(n);
-	canSplit(arr1, 5); 
+	create(n);
+	//canSplit(arr1, 5); 
 	//isSorted(arr1, 5);
 	//mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
 }
