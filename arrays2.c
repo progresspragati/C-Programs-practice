@@ -36,15 +36,20 @@ int sumOfElements(int a[], int l){
 void canSplit(int a[], int l){
 	int x = 0;
 	int y = sumOfElements(a, l);
-	for(int i = 0; (i < l) && (x != y); i++){
-		x = x + a[i];
-		y = y - a[i];
-	}
-	if(x == y){
-		printf("array can be split = true");
+	if( y%2 == 1){
+		printf("array can be split = false");
 	}
 	else{
-		printf("array can be split = false");
+		for(int i = 0; (i < l) && (x != y); i++){
+			x = x + a[i];
+			y = y - a[i];
+		}
+		if(x == y){
+			printf("array can be split = true");
+		}
+		else{
+			printf("array can be split = false");
+		}
 	}
 }
 
@@ -122,7 +127,7 @@ void mergeAndSortInDescendingOrder(int arr1[], int arr2[], int x, int y){
 }
 
 void main(){
-	int arr1[5] = {-5, 0, 18, 13, 14};
+	int arr1[5] = {-5, 0, 18, 12, 14};
 	int arr2[3] = {0, -1, -2};
 	int arr3[1] = {0};
 	int n;
@@ -130,8 +135,8 @@ void main(){
 	//scanf("%d", &n);
 	//mergerOfTwoArrays(arr1, arr2, 5, 3);
 	//create(n);
-	//canSplit(arr1, 5); 
-	isSorted(arr1, 5);
+	canSplit(arr1, 5); 
+	//isSorted(arr1, 5);
 	//mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
 }
 			
