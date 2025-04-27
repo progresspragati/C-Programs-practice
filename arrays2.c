@@ -50,7 +50,10 @@ void canSplit(int a[], int l){
 
 void isSorted(int a[], int l){
 	int i;
-	if(a[0] <= a[1]){
+	if(l <= 2){
+		printf("array is sorted = true");
+	}
+	else if(a[0] <= a[1]){
 		for( i = 0; (i <( l-1) && (a[i] <= a[i+1])); i++){
 		}
 		if((i < l-1) && (a[i] > a[i+1])){
@@ -63,7 +66,7 @@ void isSorted(int a[], int l){
 			printf("array is sorted = false");
 	 	}
  	}
-	 if(a[0] > a[1]){
+	 else{
 		for(i = 0; (i < (l-1) && (a[i] >= a[i+1])); i++){
 		}
 		if((i < l-1) && (a[i] < a[i+1])){
@@ -119,17 +122,17 @@ void mergeAndSortInDescendingOrder(int arr1[], int arr2[], int x, int y){
 }
 
 void main(){
-	int arr1[5] = {10, 11, 18, 13, 14};
-	//int arr2[3] = {0, -1, -2};
-	//int n;
+	int arr1[5] = {-5, 0, 18, 13, 14};
+	int arr2[3] = {0, -1, -2};
+	int arr3[1] = {0};
+	int n;
 	//printf("enter the number = ");
 	//scanf("%d", &n);
-	//mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
-	//mergerOfTwoArrays(arr1, arr2, 1, 3);
+	//mergerOfTwoArrays(arr1, arr2, 5, 3);
 	//create(n);
 	//canSplit(arr1, 5); 
-	//printf("%d",sumOfElements(arr1, 5)); 
 	isSorted(arr1, 5);
+	//mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
 }
 			
 		
