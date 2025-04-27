@@ -1,5 +1,30 @@
 #include <stdio.h>
 
+
+void mergerOfTwoArrays(int a[], int b[], int x, int y){
+	int c[x+y];
+	for(int i = 0; i < x; i++){
+		c[i] = a[i];
+		printf("%d ", c[i]);
+	}
+	for(int i = 0; i < y; i++){
+		c[x+i] = b[i];
+		printf("%d ", c[x+i]);
+	}
+}
+
+void create(int n){
+	int a[n*(n+1)/2];
+	int k = 0;
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j <= i; j++){
+			a[k] = j+1;
+			printf("%d ",a[k]);
+			k = k+1;
+		}
+	}
+}
+
 void mergeAndSortInDescendingOrder(int arr1[], int arr2[], int x, int y){
 	int arr3[x+y];
 	int k=0;
@@ -40,9 +65,12 @@ void mergeAndSortInDescendingOrder(int arr1[], int arr2[], int x, int y){
 }
 
 void main(){
-	int arr1[1] = {1};
-	int arr2[3] = {0, -1, -2};
-	mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
+	//int arr1[1] = {1};
+	//int arr2[3] = {0, -1, -2};
+	int n;
+	//mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
+	//mergerOfTwoArrays(arr1, arr2, 1, 3);
+	create(n);
 }
 			
 		

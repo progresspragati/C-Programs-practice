@@ -46,7 +46,7 @@ int compute(int a[], int x){
 
 void main(){
 	int a[11]= {1,2,3,3,5,3,7, 8, 8, 8, 8};
-	//printf("%d", countEvens(11, a));
-	//count6and4(a, 11);
+	printf("%d", countEvens(11, a));
+	count6and4(a, 11);
 	printf("%d", compute(a, 11));
 }
