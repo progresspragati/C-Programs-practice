@@ -1,18 +1,60 @@
 #include <stdio.h>
 
-
-void remove(int a[], int l){
-	int k = 0;
-	int b[k];
+void printIntArray(int a[], int l){
+	printf("{ ");
 	for(int i = 0; i < l; i++){
-		if(a[i] != 0){
-			b[k] = a[i];
-			k = k+1;
-			printf("%d", b[k]);
-		}
+		printf("%d ", a[i]);
+		if(i < l-1)
+			printf(", ");
 	}
+	printf(" }");
 }
 
+void removeZero(int a[], int x){
+	int k;
+	int b[k];
+	k = 0;
+	for(int i = 0; i < x; i++){
+		if(a[i] != 0){
+			b[k] = a[i];
+			//printf("%d, ", b[k]);
+			k = k+1;
+		}	
+	}
+	printIntArray(b, k);
+}
+
+void removeMultiple(int a[], int x){
+	int k;
+	int b[k];
+	k = 0;
+	for(int i = 0; i < x; i++){
+		if(a[i] == 0){
+			b[k] = a[i];
+			printf("%d, ", b[k]);
+			k = k+1;
+		}
+		if(a[i]%3 == 0){
+		}
+		else { 
+			int j;
+			for(int j = a[i]; j > 9 && j%10 != 3; j = j/10){
+			}
+			if(j%10 == 3){
+			}
+			else{
+				b[k] = a[i];
+				printf("%d, ", b[k]);
+				k = k+1;
+			}
+		}
+		//else{
+		//	b[k] = a[i];
+		//	printf("%d, ", b[k]);
+		//	k = k+1;
+		//}
+	}
+}
 
 void secondLargest(int a[], int x){
 	int l1 = a[0];
@@ -103,7 +145,9 @@ void thirdLargest(int a[], int x){
 	printf("%d, %d, %d", l1, l2, l3);
 }	
 void main(){
-	int a[4] = {4, 3, 3, 1};
-	thirdLargest(a,4);
+	int a[4] = {4, 3, 130, 1};
+	//thirdLargest(a,4);
 	//secondLargest(a, 4);
+	//removeZero(a, 4);
+	removeMultiple(a, 4);
 } 
