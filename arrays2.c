@@ -134,15 +134,14 @@ void mergeAndSortInDescendingOrder(int arr1[], int arr2[], int x, int y){
 void main(){
 	int arr1[5] = {-5, 0, 18, 12, 1};
 	int arr2[3] = {0, -1, -2};
-	int arr3[1] = {0};
 	int n;
-	printf("enter the number = ");
-	scanf("%d", &n);
+	//printf("enter the number = ");
+	//scanf("%d", &n);
 	//mergerOfTwoArrays(arr1, arr2, 5, 3);
-	create(n);
+	//create(n);
 	//canSplit(arr1, 5); 
 	//isSorted(arr1, 5);
-	//mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
+	mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
 }
 			
 		
