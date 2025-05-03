@@ -226,7 +226,7 @@ void removeDuplicates(int a[], int x){
 
 void main(){
 	
-	int a[5] = {60,33,3,13,-5};
+	int a[7] = {60,33,3,33,4,60,-5};
 	int length_a = sizeof(a)/sizeof(a[0]);
 	//thirdLargest(a, length_a);
 	//secondLargest(a, length_a);
@@ -235,5 +235,5 @@ void main(){
 	//arrayOfPrime();
 	//anyDuplicate(a, length_a);
 	//thirdLargestNumberUnique(a, length_a);
-	//removeDuplicates(a, length_a);
+	removeDuplicates(a, length_a);
 } 
