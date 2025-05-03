@@ -17,7 +17,6 @@ void removeZero(int a[], int x){
 	for(int i = 0; i < x; i++){
 		if(a[i] != 0){
 			b[k] = a[i];
-			//printf("%d, ", b[k]);
 			k = k+1;
 		}	
 	}
@@ -31,30 +30,46 @@ void removeMultiple(int a[], int x){
 	for(int i = 0; i < x; i++){
 		if(a[i] == 0){
 			b[k] = a[i];
-			printf("%d, ", b[k]);
 			k = k+1;
 		}
-		if(a[i]%3 == 0){
+		else if(a[i]%3 == 0){
 		}
 		else { 
 			int j;
-			for(int j = a[i]; j > 9 && j%10 != 3; j = j/10){
+			for(j = a[i]; j > 9 && j%10 != 3; j = j/10){
 			}
 			if(j%10 == 3){
 			}
 			else{
 				b[k] = a[i];
-				printf("%d, ", b[k]);
 				k = k+1;
 			}
 		}
-		//else{
-		//	b[k] = a[i];
-		//	printf("%d, ", b[k]);
-		//	k = k+1;
-		//}
 	}
+	printIntArray(b, k);
 }
+
+
+void arrayOfPrime(int n1, int n2){
+	int k;
+	int b[k];
+	k = 0;
+ 	for(int i = n1; i <= n2; i++){
+		int counter = 0;
+		for(int j = 2; j <= i/2 && counter == 0; j++){
+			if(i%j == 0){
+				counter++;
+			}
+		}
+		if(counter == 0 && i != 1 ){
+			b[k] = i;
+			//printf("%d, ", b[k]);
+			k = k+1;
+		}
+	}
+	printIntArray(b, k);
+}
+
 
 void secondLargest(int a[], int x){
 	int l1 = a[0];
@@ -143,11 +158,79 @@ void thirdLargest(int a[], int x){
 		}
 	}
 	printf("%d, %d, %d", l1, l2, l3);
+}
+
+void anyDuplicate(int a[], int x){
+	int counter = 0;
+	int j;
+	for(int  i = 0; i < x; i++){
+		for(j = i+1; j < x  && a[i] != a[j]; j++){
+		}
+		if(a[i] == a[j] && j < x){
+			counter++;
+		}
+	}
+	if(counter >= 1){
+		printf("true");
+	}
+	else{
+		printf("false");
+	}
+}
+
+void thirdLargestNumber(int a[], int x){
+	int l1 = a[0];
+	int l2 = a[1];
+	int l3 = a[2];
+	for(int i =1; i < x; i++){
+		if(l1 < a[i]){
+			l3 = l2;
+			l2 = l1;
+ 			l1 = a[i];
+		}
+		else if(l1 !=a[i] && l2 < a[i]){
+			l3 = l2;
+			l2 = a[i];
+		}
+		else if(l1 != a[i]  && l2 != a[i] && l3 < a[i]){
+			l3 = a[i];
+		}
+	}
+	printf("%d, %d, %d", l1, l2, l3);
+}
+
+
+void removeDuplicates(int a[], int x){
+	int k;
+	int b[k];
+	k = 0;
+	int j;
+	for(int i = 0; i < x; i++){
+		for(j = i+1; j < x && a[i] != a[j]; j++){
+		}
+		if(a[i] ==  a[j] ){
+		}
+		else{
+		b[k] = a[i];
+		k = k+1;
+		}
+	}
+	printIntArray(b, k);
 }	
+
+
 void main(){
-	int a[4] = {4, 3, 130, 1};
+	int n1;
+	int n2;
+	printf("enter n1 and n2 = ");
+	scanf("%d %d", &n1, &n2);
+	int a[4] = {4, 3, 5, 13};
 	//thirdLargest(a,4);
 	//secondLargest(a, 4);
 	//removeZero(a, 4);
-	removeMultiple(a, 4);
+	//removeMultiple(a, 4);
+	arrayOfPrime( n1, n2);
+	//anyDuplicate(a, 4);
+	//thirdLargestNumber(a, 4);
+	//removeDuplicates(a, 4);
 } 
