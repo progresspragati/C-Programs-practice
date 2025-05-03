@@ -7,7 +7,7 @@ void printIntArray(int a[], int l){
 		if(i < l-1)
 			printf(", ");
 	}
-	printf(" }");
+	printf("}");
 }
 
 void removeZero(int a[], int x){
@@ -50,7 +50,12 @@ void removeMultiple(int a[], int x){
 }
 
 
-void arrayOfPrime(int n1, int n2){
+void arrayOfPrime(){
+	int n1;
+	int n2;
+	printf("enter n1 and n2 = ");
+	scanf("%d %d", &n1, &n2);
+
 	int k;
 	int b[k];
 	k = 0;
@@ -178,7 +183,7 @@ void anyDuplicate(int a[], int x){
 	}
 }
 
-void thirdLargestNumber(int a[], int x){
+void thirdLargestNumberUnique(int a[], int x){
 	int l1 = a[0];
 	int l2 = a[1];
 	int l3 = a[2];
@@ -220,17 +225,15 @@ void removeDuplicates(int a[], int x){
 
 
 void main(){
-	int n1;
-	int n2;
-	printf("enter n1 and n2 = ");
-	scanf("%d %d", &n1, &n2);
-	int a[4] = {4, 3, 5, 13};
-	//thirdLargest(a,4);
-	//secondLargest(a, 4);
-	//removeZero(a, 4);
-	//removeMultiple(a, 4);
-	arrayOfPrime( n1, n2);
-	//anyDuplicate(a, 4);
-	//thirdLargestNumber(a, 4);
-	//removeDuplicates(a, 4);
+	
+	int a[5] = {60,33,3,13,-5};
+	int length_a = sizeof(a)/sizeof(a[0]);
+	//thirdLargest(a, length_a);
+	//secondLargest(a, length_a);
+	//removeZero(a, length_a);
+	//removeMultiple(a, length_a);
+	//arrayOfPrime();
+	//anyDuplicate(a, length_a);
+	//thirdLargestNumberUnique(a, length_a);
+	//removeDuplicates(a, length_a);
 } 
