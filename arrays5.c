@@ -81,10 +81,37 @@ void frequent(){
     }
     printf("%d", f);
 }
+void frequentDigit(){
+    int a[5] = {1234, 2342, 12555, 0034, 0567};
+    int digit[10] = {0,1,2,3,4,5,6,7,8,9};
+    int counter[10];
+    int f = digit[0];
+    int k;
+    for(int i = 0; i < 10; i++){
+        counter[i] = 0;
+        for(int j = 0; j < 5; j++){
+            for(k = a[j]; k > 9; k = k/10){
+                if( k%10 == digit[i]){
+                    counter[i]++;
+                }
+            }
+            if( k == digit[i]){
+                counter[i]++;
+            } 
+        }
+    }
+    for(int i = 1; i < 10; i++){
+        if(counter[0] < counter[i]){
+            f = digit[i];
+        }
+    }
+    printf("%d", f);
+}
 void main(){
         
     // largest();
     // addTwoMatrix();
     // to2Chars();
-    frequent();
+    // frequent();
+    frequentDigit();
 }
