@@ -49,7 +49,6 @@ void removeMultiple(int a[], int x){
 	printIntArray(b, k);
 }
 
-
 void arrayOfPrime(){
 	int n1;
 	int n2;
@@ -74,7 +73,6 @@ void arrayOfPrime(){
 	}
 	printIntArray(b, k);
 }
-
 
 void secondLargest(int a[], int x){
 	int l1 = a[0];
@@ -106,7 +104,6 @@ void secondLargest(int a[], int x){
 	}
 	printf("%d, %d", l1, l2);
 }
-
 
 void thirdLargest(int a[], int x){
 	int l1 = a[0];
@@ -204,7 +201,6 @@ void thirdLargestNumberUnique(int a[], int x){
 	printf("%d, %d, %d", l1, l2, l3);
 }
 
-
 void removeDuplicates(int a[], int x){
 	int k;
 	int b[k];
@@ -223,7 +219,6 @@ void removeDuplicates(int a[], int x){
 	printIntArray(b, k);
 }	
 
-
 void main(){
 	
 	int a[7] = {60,33,3,33,4,60,-5};
@@ -237,3 +232,4 @@ void main(){
 	//thirdLargestNumberUnique(a, length_a);
 	removeDuplicates(a, length_a);
 } 
+
