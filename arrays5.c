@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 void printIntArray(int a[], int l){
 	printf("{ ");
 	for(int i = 0; i < l; i++){
@@ -8,8 +9,9 @@ void printIntArray(int a[], int l){
 	}
 	printf("}");
 }
+	
 void largest(){
-    int a[][3]= {{1,2,3}, {4,5,2}, {13,3,0}};
+    int a[][3]= {{1,2,3}, {4,5,2}, {13,3,100}};
     int x = sizeof(a)/sizeof(a[0]);
     int y = sizeof(a[0])/(sizeof(a[0][0]));
     int l = a[0][0];
@@ -20,10 +22,10 @@ void largest(){
             }
         }
     }
-    printf("%d", l);
+    printf("largest number in 2 dimensional array = %d", l);
 }
 void addTwoMatrix(){
-    int a[][3] = {{6,6,2}, {5,2,4}};
+    int a[][3] = {{0,0,0}, {0,0,0}};
     int b[][3] = {{0,2,3}, {-1,-3,0}};
     int x = sizeof(a)/sizeof(a[0]);
     int y = sizeof(a[0])/(sizeof(a[0][0]));
@@ -42,9 +44,10 @@ void to2Chars(){
     char a[15] = {"bat sat put mat"};
     // int x = sizeof(a)/sizeof(a[0]);
     //printf("%d", x);
-    int k;
-    int l;
+    int k = 4;
+    int l = 3;
     char p[k][l];
+    int length_p = sizeof(p)/sizeof(p[0]);
     k = 0;
     l = 0;
     for(int i = 0; i < 15; i++){
@@ -81,32 +84,30 @@ void frequent(){
     }
     printf("%d", f);
 }
+
 void frequentDigit(){
-    int a[5] = {1234, 2342, 12555, 0034, 0567};
-    int digit[10] = {0,1,2,3,4,5,6,7,8,9};
-    int counter[10];
-    int f = digit[0];
-    int k;
-    for(int i = 0; i < 10; i++){
-        counter[i] = 0;
-        for(int j = 0; j < 5; j++){
-            for(k = a[j]; k > 9; k = k/10){
-                if( k%10 == digit[i]){
-                    counter[i]++;
-                }
-            }
-            if( k == digit[i]){
-                counter[i]++;
-            } 
+    int b[5] = {11,333,5555,1,999999};
+    int counter[10] = {0};	
+    for(int j = 0; j < 5; j++){
+        int k =  b[j];
+        for(; k > 9; k = k/10){
+            counter[k%10]++;
         }
+        counter[k]++; 
     }
-    for(int i = 1; i < 10; i++){
-        if(counter[0] < counter[i]){
-            f = digit[i];
-        }
+    
+    int largest = counter[0];
+    int index = 0;
+    for (int i = 0; i < 10; i++)
+    {
+       if(largest<counter[i]) {
+        largest =counter[i];
+        index = i;
+       }
     }
-    printf("%d", f);
+    printf("\n%d digit have the maximum frequency. \n", index);
 }
+
 void main(){
         
     // largest();
