@@ -9,7 +9,35 @@ void printIntArray(int a[], int l){
 	}
 	printf("}");
 }
-	
+void printCharArray(char a[], int l){
+	printf("{ ");
+	for(int i = 0; i < l; i++){
+		printf("%c ", a[i]);
+		if(i < l-1)
+			printf(", ");
+	}
+	printf("}");
+}
+void print2DArray(int x, int y, int a[x][y]){
+    printf("{");
+    for(int i = 0; i < x; i++){
+        printIntArray(a[i], y);
+        if(i < x-1){
+            printf(",");
+        }
+    }
+    printf("}");
+}
+void print2DCharArray(int x, int y, char a[x][y]){
+    printf("{");
+    for(int i = 0; i < x; i++){
+        printCharArray(a[i], y);
+        if(i < x-1){
+            printf(",");
+        }
+    }
+    printf("}");
+}
 void largest(){
     int a[][3]= {{1,2,3}, {4,5,2}, {13,3,100}};
     int x = sizeof(a)/sizeof(a[0]);
@@ -25,7 +53,7 @@ void largest(){
     printf("largest number in 2 dimensional array = %d", l);
 }
 void addTwoMatrix(){
-    int a[][3] = {{0,0,0}, {0,0,0}};
+    int a[][3] = {{1,2,3}, {1,3,0}};
     int b[][3] = {{0,2,3}, {-1,-3,0}};
     int x = sizeof(a)/sizeof(a[0]);
     int y = sizeof(a[0])/(sizeof(a[0][0]));
@@ -34,16 +62,12 @@ void addTwoMatrix(){
         int j;
         for(j = 0; j < y; j++){
             c[i][j] = a[i][j] + b[i][j];
-            printf("%d, ", c[i][j]);
         }
-        // printIntArray(c, j-1);
-        printf("\n");
     }
+    print2DArray(x, y, c);
 }
 void to2Chars(){
     char a[15] = {"bat sat put mat"};
-    // int x = sizeof(a)/sizeof(a[0]);
-    //printf("%d", x);
     int k = 4;
     int l = 3;
     char p[k][l];
@@ -52,16 +76,15 @@ void to2Chars(){
     l = 0;
     for(int i = 0; i < 15; i++){
         if(a[i] == ' '){
-            printf("\n");
             k = k+1;
             l = 0;
         }
         else{
             p[k][l] = a[i];
-            printf("%c, ", p[k][l]);
             l = l+1;
          }
     }
+    print2DCharArray(k,l,p);
 }
 
 void frequent(){
@@ -109,10 +132,9 @@ void frequentDigit(){
 }
 
 void main(){
-        
     // largest();
     // addTwoMatrix();
-    // to2Chars();
+    to2Chars();
     // frequent();
-    frequentDigit();
+//frequentDigit();
 }
