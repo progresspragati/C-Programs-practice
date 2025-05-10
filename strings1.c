@@ -7,40 +7,39 @@ int sizeOfString(char str[]){
     return counter;
 }
 
+void isSame(char s1[], char s2[]){
+    int x = sizeOfString(s1);
+    int y = sizeOfString(s2);
+    if(x == y){
+        for(int i = 0; i < x && s1[i] == s2[i]; i++){
+             if(i == x-1 && s1[i] == s2[i]){
+                printf("true"); 
+                return; 
+             }
+        }
+    }
+}
 void areSame(char str1[], char str2[], char str3[]){
     int x = sizeOfString(str1);
     int y = sizeOfString(str2);
     int z = sizeOfString(str3);
-    int i;
-    int j = 0;
-    if(x ==  y ){
-        for(i = 0; i < x && str1[i] == str2[i]; i++){
-        }
-        if( i == x){
-            printf("true");
-            j++;
-        }
+    if(x == y){
+        isSame(str1, str2);
+        return;
     }
-    if(x == z && j != 1){
-
-        for(i = 0; i < x && str1[i] == str3[i]; i++){
-        }
-        if(i == x){
-            printf("true"); 
-            j++;  
-        }
+    if(x == z){
+        isSame(str1, str3);
+        return;
     }
-    if(y == z && j != 1){
-        for(i = 0; i < y && str2[i] == str3[i]; i++){
-        }
-        if(i == y){
-            printf("true");   
-        }
+    if(y == z){
+        isSame(str2, str3);
+        return;
     }
-    if(j == 0){
+    else{
         printf("false");
     }
 }
+
 
 void form(char str1[], char str2[]){
     int x = sizeOfString(str1);
@@ -103,10 +102,11 @@ void firstWord(char str[]){
     }
 }
 void main(){
+    // isSame("paras","paras");
+    areSame("Hello", "H", "Hello");
     // form("Hello", "World");
     // count("Hello", 'l');
     // half("HelloWorld");
     // reverse("World");
-    // areSame("Hello", "World", "Helo");
-    firstWord("may i help you!");
+    // firstWord("may i help you!");
 }
