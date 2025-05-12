@@ -28,6 +28,7 @@ char middleChar(char x,char y,char z){
         return z;
     }
 }
+
 void middleWord(char w1[], char w2[], char w3[]){
     int x = sizeOfString(w1);
     int y = sizeOfString(w2);
@@ -38,6 +39,7 @@ void middleWord(char w1[], char w2[], char w3[]){
     }
     printf("%c%s%c",'"',w,'"');
 }
+
 void larger(char s1[], char s2[]){
     int x = sizeOfString(s1);
     int y = sizeOfString(s2);
@@ -62,11 +64,13 @@ void larger(char s1[], char s2[]){
         printf("%c",'"');
     }
 }
+
 void toNumber(char s[]){
     for(int i = 0; i < sizeOfString(s); i++){
         printf("%c", s[i]);
     }
 }
+
 int power(int x, int y){
     int pow = 1;
     for(int i = 1; i <= y; i++){
@@ -74,30 +78,35 @@ int power(int x, int y){
     }
     return pow;
 }
+int returnDigit(char i){
+    return i - '0';
+}
+
 void convert(char s[]){
     int j = sizeOfString(s)-1;
     int x = 0;
     for(int i = 0; i < sizeOfString(s); i++){
-        x = x+(s[i]*power(2, j));
+        x = x+(returnDigit(s[i])*power(2, j));
         j--;
     }
     printf("%d\n",x);
-    printf("%d", power(2, 2));
 }
+
 void convertToBinary(int n){
     int i;
-    int s[i+1];
+    char s[i+1];
     printf("%c", '"');
     for(i = 0; n > 1; i++){
-        s[i] = n%2;
+        s[i] = n%2+48;
         n = n/2;
     }
-    s[i] = n%2;
+    s[i] = n%2+48;
     for(int j = i; j >= 0; j--){
-        printf("%d", s[j]);
+        printf("%c", s[j]);
     }
     printf("%c", '"');
 }
+
 void main(){
     // middleWord("said","saik","sit");
     // larger("1234","1235");
