@@ -78,9 +78,9 @@ void removeChar(char s[]){
 void mostFrequent(char s[]){
     char k = s[0];
     int counter[sizeOfString(s)];
-    for(int i = 1; i < sizeOfString(s); i++){
+    for(int i = 0; i < sizeOfString(s); i++){
         counter[i] = 0;
-        for(int j = 0 ; j < i; i){
+        for(int j = 0 ; j <= i; i){
             if(s[i] == s[j]);{
                 counter[i]++;
             }
