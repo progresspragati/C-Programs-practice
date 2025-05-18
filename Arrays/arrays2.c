@@ -13,6 +13,37 @@ void mergerOfTwoArrays(int a[], int b[], int x, int y){
 	}
 }
 
+void generate(int n1, int n2){
+	printf("{");
+	for(int i = n1; i <= n2;i++){
+		if(i%15 == 0){
+			printf("%cFizzBuzz%c",'"','"');
+			if(i < n2){
+				printf("%c",',');
+			}
+		}
+		else if(i%3 == 0){
+			printf("%cFizz%c",'"', '"');
+			if(i < n2){
+				printf("%c",',');
+			}
+		}
+		else if(i%5 ==  0){
+			printf("%cBuzz%c", '"', '"');
+			if(i < n2){
+				printf("%c",',');
+			}
+		}
+		else{
+			printf("%c%d%c",'"', i, '"');
+			if(i < n2){
+				printf("%c",',');
+			}
+		}
+	}
+	printf("}");
+}
+
 void create(int n){
 	int a[n*(n+1)/2];
 	int k = 0;
@@ -141,7 +172,11 @@ void main(){
 	//create(n);
 	//canSplit(arr1, 5); 
 	//isSorted(arr1, 5);
-	mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
+	// mergeAndSortInDescendingOrder(arr1, arr2, 1, 3);
+	int n1;
+	int n2;
+	scanf("%d%d",&n1,&n2);
+	generate(n1, n2);
 }
 			
 		
