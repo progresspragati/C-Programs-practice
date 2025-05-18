@@ -80,19 +80,20 @@ void mostFrequent(char s[]){
     int counter[sizeOfString(s)];
     for(int i = 0; i < sizeOfString(s); i++){
         counter[i] = 0;
-        for(int j = 0 ; j <= i; i){
-            if(s[i] == s[j]);{
+        for(int j = 0 ; j < sizeOfString(s); j++){
+            if(s[i] == s[j]){
                 counter[i]++;
             }
         }
     }
-    int j = counter[0];
+    int y = counter[0];
     for(int i = 1; i < sizeOfString(s); i++){
-        if(j < counter[i]){
-            j = counter[i];
+        if(y < counter[i]){
+            y = counter[i];
             k = s[i];
         }
     }
+    printf("%d\n", counter[0]);
     printf("most frequent character in %s is = %c", s, k);
 }
 
@@ -131,6 +132,6 @@ void main(){
     // }
     // addTwoNumericalCharStrings("2354","353464");
     // removeChar("hello");
-    mostFrequent("122333444455555");
+    mostFrequent("12233332");
     // solve("34+45");
 }
