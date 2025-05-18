@@ -78,7 +78,6 @@ void removeChar(char s[]){
 void mostFrequent(char s[]){
     char k = s[0];
     int counter[sizeOfString(s)];
-    int j = counter[0];
     for(int i = 1; i < sizeOfString(s); i++){
         counter[i] = 0;
         for(int j = 0 ; j < i; i){
@@ -87,6 +86,7 @@ void mostFrequent(char s[]){
             }
         }
     }
+    int j = counter[0];
     for(int i = 1; i < sizeOfString(s); i++){
         if(j < counter[i]){
             j = counter[i];
@@ -100,7 +100,7 @@ void solve(char s[]){
     int d1 = 0;
     int d2 = 0;
     char a = '\0';
-    for(int i = 1; i < sizeOfString(s); i++){
+    for(int i = 0; i < sizeOfString(s); i++){
         if(s[i] == '+' || s[i] == '-'){
             if(s[i] == '+'){
                 a = '+';
@@ -117,10 +117,10 @@ void solve(char s[]){
         }
     }
     if(a == '+'){
-        a = d1+d2;
+        printf("sum of 2 numbers in %s = %d", s, d1+d2 );
     }
     else{
-        a = d1-d2;
+        printf("subtraction of 2 numbers in %s = %d", s, d1-d2);
     }
 }
 
@@ -130,7 +130,7 @@ void main(){
     //     printf("%d\n", arr[i]);
     // }
     // addTwoNumericalCharStrings("2354","353464");
-    removeChar("hello");
-    // mostFrequent("122333444455555");
+    // removeChar("hello");
+    mostFrequent("122333444455555");
     // solve("34+45");
 }
