@@ -82,7 +82,7 @@ void main(){
 	// printf("%d", countEvens(11, a));
 	// count6and4(a, 11);
 	// printf("%d", compute(a, 11));
-	// stringOfSize("A","DEF","BC","GHI",3);
-	scanf("%d", &n);
-	make(n);
+	stringOfSize("A","DEF","BC","GHI",3);
+	// scanf("%d", &n);
+	// make(n);
 }
