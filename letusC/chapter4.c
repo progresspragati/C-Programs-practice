@@ -42,6 +42,9 @@ void printTheNumber(){
                 printf("nine");
                 break;
         }
+        if(j >= 10){
+            printf("%c", ' ');
+        }
     }
     printf("%c", '"');
 }
@@ -50,7 +53,7 @@ void convertTheNumber(){
     int n, b, j = 0;
     printf("enter a number = ");
     scanf("%d", &n);
-    printf("\nenter the base in which we want to convert the number = ");
+    printf("enter the base in which we want to convert the number = ");
     scanf("%d", &b);
     for(int k = 1; n > 0; k *= 10){
         j = j + n%b*k;
@@ -73,6 +76,6 @@ void convertTheNumber(){
 }
 
 void main(){
-    printTheNumber();
-    // convertTheNumber();
+    // printTheNumber();
+    convertTheNumber();
 }
