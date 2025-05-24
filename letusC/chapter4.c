@@ -55,22 +55,24 @@ void convertTheNumber(){
     scanf("%d", &n);
     printf("enter the base in which we want to convert the number = ");
     scanf("%d", &b);
-    for(int k = 1; n > 0; k *= 10){
-        j = j + n%b*k;
-        n = n/2;
-    }
+    int l = n;
+   
     switch(b){
         default:
             printf("invalid conversion");
             break;
         case 2:
-            printf("conversion of %d into binary = %d ", n, j);
+            for(int k = 1; n > 0; k *= 10){
+                j = j + n%b*k;
+                n = n/b;
+            }
+            printf("conversion of %d into binary = %d ", l, j);
             break;
         case 8:
-            printf("conversion of %d into octal = %d", n, j);
+            printf("conversion of %d into octal = %o", l, l);
             break;
         case 16:
-            printf("conversion of %d into hexadecimal = %d", n, j);
+            printf("conversion of %d into hexadecimal = %X", l, l);
             break;
     }
 }
